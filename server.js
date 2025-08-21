@@ -10,17 +10,12 @@ const PORT = 5000;
 
 app.use(cors());
 
-// This is the correct way to connect
 const MONGODB_URI = process.env.MONGODB_URI;
 
 mongoose.connect(MONGODB_URI)
     .then(() => console.log('Successfully connected to MongoDB Atlas!'))
     .catch(err => console.error('Could not connect to MongoDB:', err));
-
-mongoose.connect(MONGODB_URI)
-    .then(() => console.log('Successfully connected to MongoDB Atlas!'))
-    .catch(err => console.error('Could not connect to MongoDB:', err));
-
+    
 // --- MongoDB Schema ---
 const SubmissionSchema = new mongoose.Schema({
     tournament: { type: String, required: true },
