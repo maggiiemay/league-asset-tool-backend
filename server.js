@@ -10,8 +10,12 @@ const PORT = 5000;
 
 app.use(cors());
 
-// --- IMPORTANT: MongoDB Connection String ---
-const MONGODB_URI = "mongodb+srv://maggiiemay:eaed7j33@cluster0.t8b7g2h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+// This is the correct way to connect
+const MONGODB_URI = process.env.MONGODB_URI;
+
+mongoose.connect(MONGODB_URI)
+    .then(() => console.log('Successfully connected to MongoDB Atlas!'))
+    .catch(err => console.error('Could not connect to MongoDB:', err));
 
 mongoose.connect(MONGODB_URI)
     .then(() => console.log('Successfully connected to MongoDB Atlas!'))
