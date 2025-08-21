@@ -11,7 +11,7 @@ const PORT = 5000;
 app.use(cors());
 
 // --- IMPORTANT: MongoDB Connection String ---
-const MONGODB_URI = "mongodb+srv://<username>:<password>@cluster0.abcde.mongodb.net/?retryWrites=true&w=majority";
+const MONGODB_URI = "mongodb+srv://maggiiemay:eaed7j33@cluster0.t8b7g2h.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose.connect(MONGODB_URI)
     .then(() => console.log('Successfully connected to MongoDB Atlas!'))
